@@ -91,8 +91,15 @@
     </section>
 
     <script>
-        function afficherMessage() {
+          function afficherMessage() {
             document.getElementById("message").innerText = "Tu as cliqué sur le bouton !";
+        }
+
+        function switchTab(tab) {
+            document.querySelectorAll(".tab-content").forEach(el => el.classList.remove("active"));
+            document.querySelectorAll("nav a").forEach(el => el.classList.remove("active"));
+            document.getElementById("content-" + tab).classList.add("active");
+            document.getElementById("tab-" + tab).classList.add("active");
         }
     </script>
 
