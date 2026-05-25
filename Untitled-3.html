@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ma Page Web Riche</title>
+    <style>
+        body {
+            font-family: 'Inter V Latin';
+            margin: 20px;
+            padding: 20px;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        body.bg-accueil { background-image: url("valoXlol.jpg"); }
+        body.bg-valorant { background-image: url("valo.jpg"); }
+        body.bg-lol { background-image: url("lol.jpg"); }
+        header {
+            background-color: rgba(228, 0, 43, 0.78);
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        nav {
+            margin: 15px 0;
+        }
+        nav a {
+            margin-right: 15px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+             nav a.active {
+            background-color: rgba(228, 0, 43, 0.78);
+            color: white;
+        }
+        section {
+            background-color: rgba(255, 255, 255, 0.75);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+         .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: rgba(228, 0, 43, 0.78);
+            color: white;
+        }
+    </style>
+</head>
+<body class="bg-accueil">
+
+    <header>
+        <h1>Memory Valorant/League of Legends</h1>
+    </header>
+
+    <nav>
+        <a id="tab-accueil" class="active" onclick="switchTab('accueil')">Accueil</a>
+        <a id="tab-valorant" onclick="switchTab('valorant')">Valorant</a>
+        <a id="tab-lol" onclick="switchTab('lol')">League of legends</a>
+    </nav>
+
+    <div>
+        <section id="content-accueil" class="tab-content active">
+            <h2>Introduction</h2>
+            <p>Voici une page HTML riche avec du contenu structuré et du style CSS.</p>
+        </section>
+
+        <section id="content-valorant" class="tab-content">
+            <h2>Valorant</h2>
+            <p>Contenu à venir...</p>
+        </section>
+
+        <section id="content-lol" class="tab-content">
+            <h2>League of Legends</h2>
+            <p>Contenu à venir...</p>
+        </section>
+    </div>
+
+    <section>
+        <h2>Interactivité avec JavaScript</h2>
+        <button onclick="afficherMessage()">Clique-moi</button>
+        <p id="message" style="font-weight: bold; color: red;"></p>
+    </section>
+
+    <script>
+          function afficherMessage() {
+            document.getElementById("message").innerText = "Tu as cliqué sur le bouton !";
+        }
+
+        function switchTab(tab) {
+            document.querySelectorAll(".tab-content").forEach(el => el.classList.remove("active"));
+            document.querySelectorAll("nav a").forEach(el => el.classList.remove("active"));
+            document.getElementById("content-" + tab).classList.add("active");
+            document.getElementById("tab-" + tab).classList.add("active");
+            document.body.className = "bg-" + tab;
+        }
+    </script>
+
+    <footer>
+        <p>© 2026 - MKwebsite</p>
+    </footer>
+
+</body>
+</html>
