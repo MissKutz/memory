@@ -9,11 +9,13 @@
             font-family: 'Inter V Latin';
             margin: 20px;
             padding: 20px;
-            background-image: url("images.jpg");
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
         }
+        body.bg-accueil { background-image: url("valoXlol.jpeg"); }
+        body.bg-valorant { background-image: url("valo.jpeg"); }
+        body.bg-lol { background-image: url("lol.jpeg"); }
         header {
             background-color: #E4002B;
             color: white;
@@ -102,6 +104,7 @@
             document.querySelectorAll("nav a").forEach(el => el.classList.remove("active"));
             document.getElementById("content-" + tab).classList.add("active");
             document.getElementById("tab-" + tab).classList.add("active");
+            document.body.className = "bg-" + tab;
         }
     </script>
 
