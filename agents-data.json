@@ -210,6 +210,7 @@
     "acte": ""
   },
   {
+    // Enzo
     "id": "astra",
     "nom": "Astra",
     "histoire": "L'agent ghan\u00e9en Astra canalise les \u00e9nergies du cosmos pour fa\u00e7onner le champ de bataille \u00e0 sa convenance. Avec une ma\u00eetrise compl\u00e8te de sa forme astrale et un talent pour la planification strat\u00e9gique, elle a toujours une large avance sur ses ennemis.",
@@ -435,6 +436,7 @@
     "acte": ""
   },
   {
+    // fin Enzo
     "id": "8",
     "nom": "Agent 8",
     "histoire": "Les informations sur cet agent sont classifi\u00e9es.",
