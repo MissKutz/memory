@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agent - Valorant Memory</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: url("valo.jpg") fixed center/cover;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+        }
+        .card {
+            background: rgba(255,255,255,0.92);
+            border-radius: 16px;
+            max-width: 900px;
+            width: 100%;
+            padding: 40px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+        }
+        .back {
+            display: inline-block;
+            margin-bottom: 24px;
+            color: rgba(228, 0, 43, 0.85);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .back:hover { text-decoration: underline; }
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        .header img {
+            width: 200px;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+        }
+        .header h1 {
+            font-size: 36px;
+            color: #222;
+        }
+        .section-title {
+            font-size: 22px;
+            font-weight: bold;
+            color: rgba(228, 0, 43, 0.85);
+            margin: 24px 0 12px 0;
+            border-bottom: 2px solid rgba(228, 0, 43, 0.2);
+            padding-bottom: 6px;
+        }
+        .histoire {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #444;
+        }
+        .competence {
+            background: #f5f5f5;
+            border-radius: 10px;
+            padding: 14px 18px;
+            margin-bottom: 10px;
+        }
+        .competence .nom {
+            font-weight: bold;
+            font-size: 17px;
+            color: #222;
+        }
+        .competence .type {
+            font-size: 13px;
+            color: rgba(228, 0, 43, 0.85);
+            font-weight: 600;
+            margin-left: 8px;
+        }
+        .competence .desc {
+            font-size: 15px;
+            color: #555;
+            margin-top: 4px;
+        }
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 4px;
+        }
+        .tag {
+            background: rgba(228, 0, 43, 0.1);
+            color: rgba(228, 0, 43, 0.9);
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .loading {
+            text-align: center;
+            font-size: 20px;
+            color: #666;
+            padding: 60px 0;
+        }
+        @media (max-width: 600px) {
+            .card { padding: 20px; }
+            .header { flex-direction: column; text-align: center; }
+            .header img { width: 150px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="card" id="app">
+        <a class="back" href="index.html">&larr; Retour aux agents</a>
+        <div class="loading">Chargement...</div>
+    </div>
+
+    <script>
+        async function chargerAgent() {
+            const params = new URLSearchParams(window.location.search);
+            const id = params.get("id");
+            if (!id) {
+                document.querySelector("#app").innerHTML = '<a class="back" href="index.html">&larr; Retour</a><p style="margin-top:20px">Aucun agent sp\u00e9cifi\u00e9.</p>';
+                return;
+            }
+
+            const resp = await fetch("agents-data.json");
+            const agents = await resp.json();
+            const agent = agents.find(a => a.id === id);
+
+            if (!agent) {
+                document.querySelector("#app").innerHTML = '<a class="back" href="index.html">&larr; Retour</a><p style="margin-top:20px">Agent introuvable.</p>';
+                return;
+            }
+
+            const ext = (id === "skye" || id === "viper") ? "jpg" : (id === "8" ? "png" : "jpeg");
+            const imgSrc = `images/valo/${id}.${ext}`;
+
+            document.title = `${agent.nom} - Valorant Memory`;
+
+            document.querySelector("#app").innerHTML = `
+                <a class="back" href="index.html">&larr; Retour aux agents</a>
+                <div class="header">
+                    <img src="${imgSrc}" alt="${agent.nom}">
+                    <div>
+                        <h1>${agent.nom}</h1>
+                    </div>
+                </div>
+
+                <div class="section-title">Histoire</div>
+                <p class="histoire">${agent.histoire}</p>
+
+                <div class="section-title">Comp\u00e9tences</div>
+                ${agent.competences.map(c => `
+                    <div class="competence">
+                        <span class="nom">${c.nom}</span>
+                        <span class="type">${c.type}</span>
+                        <div class="desc">${c.description}</div>
+                    </div>
+                `).join("")}
+
+                ${agent.maps && agent.maps.length ? `
+                    <div class="section-title">Maps recommand\u00e9es</div>
+                    <div class="tags">${agent.maps.map(m => `<span class="tag">${m}</span>`).join("")}</div>
+                ` : ""}
+
+                ${agent.meilleure_compo && agent.meilleure_compo.length ? `
+                    <div class="section-title">Meilleure composition</div>
+                    <div class="tags">${agent.meilleure_compo.map(m => `<span class="tag">${m}</span>`).join("")}</div>
+                ` : ""}
+            `;
+        }
+
+        chargerAgent();
+    </script>
+</body>
+</html>
