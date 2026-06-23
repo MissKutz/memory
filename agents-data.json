@@ -2,6 +2,8 @@
   {
     "id": "sage",
     "nom": "Sage",
+    "nationalite": "Chine",
+    "role": "Sentinelle",
     "histoire": "Originaire de Chine, Sage est une guérisseuse qui protège ses alliés. Elle a la capacité de ralentir les ennemis et de ressusciter ses coéquipiers.",
     "competences": [
       {"nom": "Barrière de glace", "type": "Signature", "description": "Équipe une barrière de glace solide qui bloque les passages et les lignes de vue."},
@@ -17,6 +19,8 @@
   {
     "id": "iso",
     "nom": "Iso",
+    "nationalite": "Chine",
+    "role": "Dueliste",
     "histoire": "Iso est un agent chinois, un dueliste qui peut manipuler l'énergie ambiante pour se renforcer et éliminer ses adversaires en un contre un.",
     "competences": [
       {"nom": "Contrat de duel", "type": "Signature", "description": "Invoque une arène de duel qui absorbe les dégâts entrants."},
@@ -32,6 +36,8 @@
   {
     "id": "neon",
     "nom": "Neon",
+    "nationalite": "Philippines",
+    "role": "Dueliste",
     "histoire": "Neon est une dueliste philippine qui court à une vitesse fulgurante, électrifiant le champ de bataille avec ses capacités de vitesse et d'éclairs.",
     "competences": [
       {"nom": "Vitesse fulgurante", "type": "Signature", "description": "Active une course rapide avec rechargement au kill."},
@@ -47,6 +53,8 @@
   {
     "id": "gekko",
     "nom": "Gekko",
+    "nationalite": "États-Unis",
+    "role": "Initiateur",
     "histoire": "Gekko est un initiateur de Los Angeles qui utilise des créatures adorables mais dangereuses pour contrôler le champ de bataille et submerger ses ennemis.",
     "competences": [
       {"nom": "Mosh", "type": "Signature", "description": "Lance Mosh qui explose au contact du sol et étourdit les ennemis."},
@@ -62,6 +70,8 @@
   {
     "id": "skye",
     "nom": "Skye",
+    "nationalite": "Australie",
+    "role": "Initiatrice",
     "histoire": "Skye est une initiatrice australienne qui utilise la nature et ses animaux pour traquer et aider ses alliés sur le champ de bataille.",
     "competences": [
       {"nom": "Tr\u00e9sors", "type": "Signature", "description": "Lance un chien qui traque et aveugle les ennemis."},
@@ -77,6 +87,8 @@
   {
     "id": "yoru",
     "nom": "Yoru",
+    "nationalite": "Japon",
+    "role": "Dueliste",
     "histoire": "Yoru est un dueliste japonais qui peut traverser les dimensions et surprendre ses ennemis avec des attaques venues de nulle part.",
     "competences": [
       {"nom": "Distorsion", "type": "Signature", "description": "Cr\u00e9e une faille dimensionnelle de t\u00e9l\u00e9portation."},
@@ -92,6 +104,8 @@
   {
     "id": "jett",
     "nom": "Jett",
+    "nationalite": "Cor\u00e9e du Sud",
+    "role": "Dueliste",
     "histoire": "Jett est une dueliste sud-cor\u00e9enne, agile et impr\u00e9visible. Elle utilise le vent pour esquiver et surprendre ses adversaires.",
     "competences": [
       {"nom": "Courant ascendant", "type": "Signature", "description": "Propulse Jett vers le haut."},
@@ -107,6 +121,8 @@
   {
     "id": "phoenix",
     "nom": "Phoenix",
+    "nationalite": "Royaume-Uni",
+    "role": "Dueliste",
     "histoire": "Phoenix est un dueliste britannique qui ma\u00eetrise le feu. Il peut se soigner en infligeant des d\u00e9g\u00e2ts et aveugler ses ennemis avec ses flammes.",
     "competences": [
       {"nom": "Muraille de feu", "type": "Signature", "description": "Cr\u00e9e un mur de feu qui soigne Phoenix et blesse les ennemis."},
@@ -122,6 +138,8 @@
   {
     "id": "viper",
     "nom": "Viper",
+    "nationalite": "\u00c9tats-Unis",
+    "role": "Contr\u00f4leuse",
     "histoire": "Viper est une contr\u00f4leuse am\u00e9ricaine, experte en toxines et en chimie. Elle utilise le poison pour contr\u00f4ler les zones et asphyxier ses ennemis.",
     "competences": [
       {"nom": "Nuage toxique", "type": "Signature", "description": "Lance un \u00e9metteur de gaz toxique."},
@@ -137,6 +155,8 @@
   {
     "id": "chamber",
     "nom": "Chamber",
+    "nationalite": "France",
+    "role": "Sentinelle",
     "histoire": "Chamber est un sentinelle fran\u00e7ais, un cr\u00e9ateur d'armes de pr\u00e9cision. Il \u00e9limine ses cibles avec \u00e9l\u00e9gance et efficacit\u00e9.",
     "competences": [
       {"nom": "Pistolets t\u00e9l\u00e9port\u00e9s", "type": "Signature", "description": "\u00c9quipe des pistolets de pr\u00e9cision t\u00e9l\u00e9portables."},
@@ -152,6 +172,8 @@
   {
     "id": "reyna",
     "nom": "Reyna",
+    "nationalite": "Mexique",
+    "role": "Dueliste",
     "histoire": "Reyna est une dueliste mexicaine, une pr\u00e9datrice impitoyable qui se nourrit de l'\u00e2me de ses ennemis pour devenir plus forte.",
     "competences": [
       {"nom": "D\u00e9voration", "type": "Signature", "description": "D\u00e9vore l'\u00e2me d'un ennemi pour se soigner."},
@@ -167,6 +189,8 @@
   {
     "id": "tejo",
     "nom": "Tejo",
+    "nationalite": "Colombie",
+    "role": "Initiateur",
     "histoire": "Tejo est un initiator colombien, sp\u00e9cialiste du contr\u00f4le des foules et de la perturbation ennemie.",
     "competences": [
       {"nom": "\u00c9lan perturbateur", "type": "Signature", "description": "Lance une vague d'\u00e9nergie qui perturbe les ennemis."},
@@ -182,6 +206,8 @@
   {
     "id": "fade",
     "nom": "Fade",
+    "nationalite": "Turquie",
+    "role": "Initiatrice",
     "histoire": "Fade est une initiatrice turque qui utilise les cauchemars et la terreur pour traquer ses ennemis et les affaiblir mentalement.",
     "competences": [
       {"nom": "Cauchemar", "type": "Signature", "description": "Lance un orbe de cauchemar qui aveugle les ennemis."},
@@ -197,6 +223,8 @@
   {
     "id": "sova",
     "nom": "Sova",
+    "nationalite": "Russie",
+    "role": "Initiateur",
     "histoire": "Sova est un initiator russe, un chasseur d'\u00e9lite qui utilise un arc et des fl\u00e8ches pour r\u00e9v\u00e9ler et traquer ses ennemis.",
     "competences": [
       {"nom": "Fl\u00e8che de r\u00e9v\u00e9lation", "type": "Signature", "description": "Tire une fl\u00e8che qui r\u00e9v\u00e8le les ennemis."},
@@ -213,7 +241,9 @@
     // Enzo
     "id": "astra",
     "nom": "Astra",
-    "histoire": "L'agent ghan\u00e9en Astra canalise les \u00e9nergies du cosmos pour fa\u00e7onner le champ de bataille \u00e0 sa convenance. Avec une ma\u00eetrise compl\u00e8te de sa forme astrale et un talent pour la planification strat\u00e9gique, elle a toujours une large avance sur ses ennemis.",
+    "nationalite": "Ghana",
+    "role": "Contrôleuse",
+    "histoire": "L'agent ghanéen Astra canalise les énergies du cosmos pour façonner le champ de bataille à sa convenance. Avec une maîtrise complète de sa forme astrale et un talent pour la planification stratégique, elle a toujours une large avance sur ses ennemis.",
     "competences": [
       {"nom": "Puits cosmique", "type": "Signature", "description": "Place un puits qui ralentit et attire les ennemis."},
       {"nom": "Nova", "type": "Base", "description": "Cr\u00e9e une explosion cosmique qui aveugle."},
@@ -228,6 +258,8 @@
   {
     "id": "harbor",
     "nom": "Harbor",
+    "nationalite": "Inde",
+    "role": "Contr\u00f4leur",
     "histoire": "Harbor est un contr\u00f4leur indien qui utilise l'eau et les vagues pour cr\u00e9er des murs protecteurs et bloquer les lignes de vue.",
     "competences": [
       {"nom": "Vague protectrice", "type": "Signature", "description": "Cr\u00e9e un mur d'eau protecteur."},
@@ -243,6 +275,8 @@
   {
     "id": "deadlock",
     "nom": "Deadlock",
+    "nationalite": "Norv\u00e8ge",
+    "role": "Sentinelle",
     "histoire": "Deadlock est une sentinelle norv\u00e9gienne qui utilise des pi\u00e8ges et des technologies de pointe pour contr\u00f4ler les zones et arr\u00eater les ennemis.",
     "competences": [
       {"nom": "Pi\u00e8ge de fil", "type": "Signature", "description": "Place un fil pi\u00e9g\u00e9 qui attrape les ennemis."},
@@ -258,6 +292,8 @@
   {
     "id": "breach",
     "nom": "Breach",
+    "nationalite": "Su\u00e8de",
+    "role": "Initiateur",
     "histoire": "Breach est un initiator su\u00e9dois, un cyborg qui utilise des explosions sismiques pour d\u00e9stabiliser et contr\u00f4ler ses ennemis.",
     "competences": [
       {"nom": "Onde sismique", "type": "Signature", "description": "Lance une onde sismique qui aveugle les ennemis."},
@@ -273,6 +309,8 @@
   {
     "id": "vyse",
     "nom": "Vyse",
+    "nationalite": "",
+    "role": "Sentinelle",
     "histoire": "Vyse est une sentinelle myst\u00e9rieuse dont les capacit\u00e9s de contr\u00f4le et de pi\u00e9geage font d'elle une adversaire redoutable.",
     "competences": [
       {"nom": "Mur d'ombre", "type": "Signature", "description": "Cr\u00e9e un mur d'ombre qui bloque la vision."},
@@ -288,6 +326,8 @@
   {
     "id": "cypher",
     "nom": "Cypher",
+    "nationalite": "Maroc",
+    "role": "Sentinelle",
     "histoire": "Cypher est un sentinelle marocain, un ma\u00eetre de la surveillance et du renseignement. Il utilise des pi\u00e8ges et des cam\u00e9ras pour contr\u00f4ler les informations.",
     "competences": [
       {"nom": "Cam\u00e9ra", "type": "Signature", "description": "Place une cam\u00e9ra qui tire des dards r\u00e9v\u00e9lateurs."},
@@ -303,6 +343,8 @@
   {
     "id": "clove",
     "nom": "Clove",
+    "nationalite": "\u00c9cosse",
+    "role": "Dueliste",
     "histoire": "Clove est un dueliste \u00e9cossais qui se bat avec fureur, capable de se r\u00e9g\u00e9n\u00e9rer et d'augmenter sa puissance au fil des combats.",
     "competences": [
       {"nom": "R\u00e9g\u00e9n\u00e9ration", "type": "Signature", "description": "R\u00e9g\u00e9n\u00e8re ses PV au fil du temps."},
@@ -318,6 +360,8 @@
   {
     "id": "miks",
     "nom": "Miks",
+    "nationalite": "",
+    "role": "Initiateur",
     "histoire": "Miks est un initiator myst\u00e9rieux dont les capacit\u00e9s de manipulation de l'\u00e9nergie permettent de cr\u00e9er des ouvertures pour son \u00e9quipe.",
     "competences": [
       {"nom": "Perc\u00e9e d'\u00e9nergie", "type": "Signature", "description": "Lance une perc\u00e9e d'\u00e9nergie qui d\u00e9stabilise les ennemis."},
@@ -333,6 +377,8 @@
   {
     "id": "waylay",
     "nom": "Waylay",
+    "nationalite": "",
+    "role": "Contr\u00f4leur",
     "histoire": "Waylay est un contr\u00f4leur qui utilise des technologies de dissimulation pour cr\u00e9er des zones de contr\u00f4le et surprendre ses adversaires.",
     "competences": [
       {"nom": "Zone d'ombre", "type": "Signature", "description": "Cr\u00e9e une zone d'ombre qui cache les alli\u00e9s."},
@@ -348,6 +394,8 @@
   {
     "id": "veto",
     "nom": "Veto",
+    "nationalite": "",
+    "role": "Sentinelle",
     "histoire": "Veto est un sentinelle qui utilise des champs de force pour contr\u00f4ler les zones et prot\u00e9ger son \u00e9quipe.",
     "competences": [
       {"nom": "Champ de force", "type": "Signature", "description": "Cr\u00e9e un champ de force qui bloque les projectiles."},
@@ -363,6 +411,8 @@
   {
     "id": "killjoy",
     "nom": "Killjoy",
+    "nationalite": "Allemagne",
+    "role": "Sentinelle",
     "histoire": "Killjoy est une sentinelle allemande, une ing\u00e9nieure de g\u00e9nie qui utilise des tourelles, des pi\u00e8ges et des drones pour contr\u00f4ler les zones.",
     "competences": [
       {"nom": "Tourelle", "type": "Signature", "description": "Place une tourelle qui tire sur les ennemis."},
@@ -378,6 +428,8 @@
   {
     "id": "raze",
     "nom": "Raze",
+    "nationalite": "Br\u00e9sil",
+    "role": "Dueliste",
     "histoire": "Raze est une dueliste br\u00e9silienne, une experte en explosifs qui utilise des charges, des grenades et des roquettes pour faire des ravages.",
     "competences": [
       {"nom": "Charge explosive", "type": "Signature", "description": "Place une charge explosive qui colle aux surfaces."},
@@ -393,6 +445,8 @@
   {
     "id": "kayo",
     "nom": "KAYO",
+    "nationalite": "",
+    "role": "Initiateur",
     "histoire": "KAY/O est un initiator robotique, un agent cr\u00e9\u00e9 pour neutraliser les capacit\u00e9s ennemies et mener des assauts d\u00e9terminants.",
     "competences": [
       {"nom": "Grenade flash", "type": "Signature", "description": "Lance une grenade flash aveuglante."},
@@ -408,6 +462,8 @@
   {
     "id": "brimstone",
     "nom": "Brimstone",
+    "nationalite": "\u00c9tats-Unis",
+    "role": "Contr\u00f4leur",
     "histoire": "Brimstone est un contr\u00f4leur am\u00e9ricain, un v\u00e9t\u00e9ran qui utilise des frappes a\u00e9riennes et des fumig\u00e8nes pour soutenir son \u00e9quipe.",
     "competences": [
       {"nom": "Fumig\u00e8ne", "type": "Signature", "description": "Lance un fumig\u00e8ne qui bloque la vision."},
@@ -423,6 +479,8 @@
   {
     "id": "omen",
     "nom": "Omen",
+    "nationalite": "",
+    "role": "Contr\u00f4leur",
     "histoire": "Omen est un contr\u00f4leur myst\u00e9rieux, un spectre qui manipule les ombres et les t\u00e9n\u00e8bres pour d\u00e9sinformer et surprendre ses ennemis.",
     "competences": [
       {"nom": "Ombre", "type": "Signature", "description": "Lance une ombre qui bloque la vision."},
@@ -439,6 +497,8 @@
     // fin Enzo
     "id": "8",
     "nom": "Agent 8",
+    "nationalite": "",
+    "role": "",
     "histoire": "Les informations sur cet agent sont classifi\u00e9es.",
     "competences": [
       {"nom": "Inconnue", "type": "Signature", "description": "Informations classifi\u00e9es."},
