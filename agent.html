@@ -112,7 +112,7 @@
 </head>
 <body>
     <div class="card" id="app">
-        <a class="back" href="index.html">&larr; Retour aux agents</a>
+        <a class="back" href="index.html?tab=valorant">&larr; Retour aux agents</a>
         <div class="loading">Chargement...</div>
     </div>
 
@@ -514,7 +514,7 @@
             var params = new URLSearchParams(window.location.search);
             var id = params.get("id");
             if (!id) {
-                document.querySelector("#app").innerHTML = '<a class="back" href="index.html">&larr; Retour</a><p style="margin-top:20px">Aucun agent sp\u00e9cifi\u00e9.</p>';
+                document.querySelector("#app").innerHTML = '<a class="back" href="index.html?tab=valorant">&larr; Retour</a><p style="margin-top:20px">Aucun agent sp\u00e9cifi\u00e9.</p>';
                 return;
             }
 
@@ -527,7 +527,7 @@
             }
 
             if (!agent) {
-                document.querySelector("#app").innerHTML = '<a class="back" href="index.html">&larr; Retour</a><p style="margin-top:20px">Agent introuvable.</p>';
+                document.querySelector("#app").innerHTML = '<a class="back" href="index.html?tab=valorant">&larr; Retour</a><p style="margin-top:20px">Agent introuvable.</p>';
                 return;
             }
 
@@ -539,7 +539,7 @@
             document.title = agent.nom + " - Valorant Memory";
 
             var html = '';
-            html += '<a class="back" href="index.html">&larr; Retour aux agents</a>';
+            html += '<a class="back" href="index.html?tab=valorant">&larr; Retour aux agents</a>';
             html += '<div class="header">';
             html += '<img src="' + imgSrc + '" alt="' + agent.nom + '">';
             html += '<div><h1>' + agent.nom + '</h1></div>';
