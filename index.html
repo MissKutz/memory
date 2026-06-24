@@ -1005,6 +1005,11 @@
             location.href = "agent.html?id=" + id;
         }
 
+        function showChampion(el) {
+            var name = el.querySelector("p").textContent;
+            location.href = "champion.html?name=" + encodeURIComponent(name);
+        }
+
         (function() {
             renderValo();
             var params = new URLSearchParams(window.location.search);
