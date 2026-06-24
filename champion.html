@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Champion - League of Legends Memory</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: url("lol.jpg") fixed center/cover;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+        }
+        .card {
+            background: rgba(255,255,255,0.92);
+            border-radius: 16px;
+            max-width: 900px;
+            width: 100%;
+            padding: 40px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+            position: relative;
+        }
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+        .back {
+            display: inline-block;
+            margin-bottom: 24px;
+            color: #0397ab;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .back:hover { text-decoration: underline; }
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        .header img {
+            width: 200px;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+        }
+        .header h1 {
+            font-size: 36px;
+            color: #222;
+        }
+        .header .title {
+            font-size: 18px;
+            color: #888;
+            font-weight: 500;
+            font-style: italic;
+        }
+        .role-under-name {
+            font-size: 16px;
+            font-weight: bold;
+            color: #0397ab;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 6px;
+            flex-wrap: wrap;
+        }
+        .role-under-name .class-badge {
+            display: inline-block;
+            background: rgba(3,151,171,0.12);
+            color: #0397ab;
+            padding: 2px 12px;
+            border-radius: 12px;
+            font-size: 13px;
+        }
+        .section-title {
+            font-size: 22px;
+            font-weight: bold;
+            color: #0397ab;
+            margin: 24px 0 12px 0;
+            border-bottom: 2px solid rgba(3,151,171,0.2);
+            padding-bottom: 6px;
+        }
+        .histoire {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #444;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin: 12px 0;
+        }
+        .stat-bar {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .stat-bar .label {
+            width: 70px;
+            font-weight: 600;
+            font-size: 14px;
+            color: #333;
+        }
+        .stat-bar .bar-bg {
+            flex: 1;
+            height: 10px;
+            background: #e0e0e0;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .stat-bar .bar-fill {
+            height: 100%;
+            border-radius: 5px;
+            transition: width 0.3s;
+        }
+        .stat-bar .bar-fill.attack { background: #e74c3c; }
+        .stat-bar .bar-fill.defense { background: #2ecc71; }
+        .stat-bar .bar-fill.magic { background: #3498db; }
+        .stat-bar .bar-fill.difficulty { background: #f39c12; }
+        .ability {
+            background: #f5f5f5;
+            border-radius: 10px;
+            padding: 14px 18px;
+            margin-bottom: 10px;
+        }
+        .ability .nom {
+            font-weight: bold;
+            font-size: 17px;
+            color: #222;
+        }
+        .ability .type {
+            font-size: 13px;
+            color: #0397ab;
+            font-weight: 600;
+            margin-left: 8px;
+        }
+        .ability .desc {
+            font-size: 15px;
+            color: #555;
+            margin-top: 4px;
+        }
+        .ability .cost {
+            font-size: 12px;
+            color: #999;
+            margin-top: 4px;
+        }
+        .loading {
+            text-align: center;
+            font-size: 20px;
+            color: #666;
+            padding: 60px 0;
+        }
+        .error {
+            text-align: center;
+            font-size: 18px;
+            color: #e74c3c;
+            padding: 60px 0;
+        }
+        @media (max-width: 600px) {
+            .card { padding: 20px; }
+            .header { flex-direction: column; text-align: center; }
+            .header img { width: 150px; }
+            .stats-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="card" id="app">
+        <a class="back" href="index.html?tab=lol">&larr; Retour aux champions</a>
+        <div class="loading">Chargement...</div>
+    </div>
+
+    <script>
+        function chargerChampion() {
+            var params = new URLSearchParams(window.location.search);
+            var champName = params.get("name");
+            if (!champName) {
+                document.querySelector("#app").innerHTML = '<a class="back" href="index.html?tab=lol">&larr; Retour</a><p class="error" style="margin-top:20px">Aucun champion sp\u00e9cifi\u00e9.</p>';
+                return;
+            }
+
+            var apiUrl = "https://raw.githubusercontent.com/noxelisdev/LoL_DDragon/master/latest/data/fr_FR/championFull.json";
+
+            fetch(apiUrl)
+                .then(function(resp) { return resp.json(); })
+                .then(function(json) {
+                    var champions = json.data;
+                    var champ = null;
+                    var champId = null;
+
+                    for (var key in champions) {
+                        if (key === champName || champions[key].name === champName || champions[key].id === champName) {
+                            champ = champions[key];
+                            champId = key;
+                            break;
+                        }
+                    }
+
+                    if (!champ) {
+                        document.querySelector("#app").innerHTML = '<a class="back" href="index.html?tab=lol">&larr; Retour</a><p class="error" style="margin-top:20px">Champion "' + champName + '" introuvable.</p>';
+                        return;
+                    }
+
+                    afficherChampion(champ, champId);
+                })
+                .catch(function(err) {
+                    document.querySelector("#app").innerHTML = '<a class="back" href="index.html?tab=lol">&larr; Retour</a><p class="error" style="margin-top:20px">Erreur de chargement des donn\u00e9es. Veuillez r\u00e9essayer.</p>';
+                });
+        }
+
+        function afficherChampion(champ, champId) {
+            document.title = champ.name + " - League of Legends Memory";
+
+            var html = '';
+            html += '<a class="back" href="index.html?tab=lol">&larr; Retour aux champions</a>';
+
+            html += '<div class="header">';
+            html += '<img src="images/lol/' + champId + '.png" alt="' + champ.name + '">';
+            html += '<div style="flex:1">';
+            html += '<div class="header-top">';
+            html += '<h1>' + champ.name + '</h1>';
+            html += '</div>';
+            html += '<div class="title">' + champ.title + '</div>';
+            if (champ.tags && champ.tags.length > 0) {
+                html += '<div class="role-under-name">';
+                for (var t = 0; t < champ.tags.length; t++) {
+                    html += '<span class="class-badge">' + champ.tags[t] + '</span>';
+                }
+                html += '<span style="font-weight:400;color:#999;font-size:13px;margin-left:4px">Difficult\u00e9: ' + champ.info.difficulty + '/10</span>';
+                html += '</div>';
+            }
+            if (champ.partype && champ.partype !== "") {
+                html += '<div style="font-size:14px;color:#666;margin-top:4px">Ressource: ' + champ.partype + '</div>';
+            }
+            html += '</div>';
+            html += '</div>';
+
+            html += '<div class="section-title">Statistiques</div>';
+            html += '<div class="stats-grid">';
+            html += '<div class="stat-bar"><span class="label">Attaque</span><div class="bar-bg"><div class="bar-fill attack" style="width:' + (champ.info.attack * 10) + '%"></div></div><span style="font-size:13px;color:#666">' + champ.info.attack + '/10</span></div>';
+            html += '<div class="stat-bar"><span class="label">D\u00e9fense</span><div class="bar-bg"><div class="bar-fill defense" style="width:' + (champ.info.defense * 10) + '%"></div></div><span style="font-size:13px;color:#666">' + champ.info.defense + '/10</span></div>';
+            html += '<div class="stat-bar"><span class="label">Magie</span><div class="bar-bg"><div class="bar-fill magic" style="width:' + (champ.info.magic * 10) + '%"></div></div><span style="font-size:13px;color:#666">' + champ.info.magic + '/10</span></div>';
+            html += '<div class="stat-bar"><span class="label">Difficult\u00e9</span><div class="bar-bg"><div class="bar-fill difficulty" style="width:' + (champ.info.difficulty * 10) + '%"></div></div><span style="font-size:13px;color:#666">' + champ.info.difficulty + '/10</span></div>';
+            html += '</div>';
+
+            html += '<div class="section-title">Histoire</div>';
+            html += '<p class="histoire">' + champ.blurb + '</p>';
+
+            html += '<div class="section-title">Comp\u00e9tences</div>';
+
+            if (champ.passive) {
+                html += '<div class="ability">';
+                html += '<span class="nom">' + champ.passive.name + '</span>';
+                html += '<span class="type">Passif</span>';
+                html += '<div class="desc">' + champ.passive.description + '</div>';
+                html += '</div>';
+            }
+
+            if (champ.spells) {
+                var spellLabels = ["Q", "Z", "E", "R"];
+                for (var s = 0; s < champ.spells.length; s++) {
+                    var spell = champ.spells[s];
+                    var cd = spell.cooldownBurn;
+                    var cost = spell.costBurn;
+                    var hasCost = cost && cost !== "0" && cost !== "0/0/0/0/0";
+                    html += '<div class="ability">';
+                    html += '<span class="nom">' + spell.name + '</span>';
+                    html += '<span class="type">' + spellLabels[s] + ' &mdash; ' + (spell.costType && spell.costType !== "Pas de co\u00fbt" ? spell.costType : "Pas de co\u00fbt") + '</span>';
+                    html += '<div class="desc">' + spell.description + '</div>';
+                    html += '<div class="cost">' + (cd ? "Rechargement: " + cd : "") + (cd && hasCost ? " &middot; " : "") + (hasCost ? "Co\u00fbt: " + cost : "") + '</div>';
+                    html += '</div>';
+                }
+            }
+
+            document.querySelector("#app").innerHTML = html;
+        }
+
+        chargerChampion();
+    </script>
+</body>
+</html>
