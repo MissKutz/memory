@@ -126,6 +126,24 @@
         .stat-bar .bar-fill.defense { background: #2ecc71; }
         .stat-bar .bar-fill.magic { background: #8518a1; }
         .stat-bar .bar-fill.difficulty { background: #f39c12; }
+        .lane-badge {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 8px 12px;
+            margin: 4px;
+            font-size: 12px;
+            font-weight: 500;
+            color: white;
+            display: inline-block;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .lane-top { background-color: #FF8C00; }
+        .lane-jungle { background-color: #1B5E20; }
+        .lane-mid { background-color: #FFC107; color: #333; }
+        .lane-bot { background-color: #C77DFF; }
+        .lane-support { background-color: #E8D5B7; color: #333; }
+        .lane-other { background-color: #6c757d; }
         .ability {
             background: #f5f5f5;
             border-radius: 10px;
@@ -604,6 +622,38 @@ var CHAMPIONS_DATA = [
             html += '<div class="stat-bar"><span class="label">D\u00e9fense</span><div class="bar-bg"><div class="bar-fill defense" style="width:' + (champ.info.defense * 10) + '%"></div></div><span style="font-size:13px;color:#666">' + champ.info.defense + '/10</span></div>';
             html += '<div class="stat-bar"><span class="label">Magie</span><div class="bar-bg"><div class="bar-fill magic" style="width:' + (champ.info.magic * 10) + '%"></div></div><span style="font-size:13px;color:#666">' + champ.info.magic + '/10</span></div>';
             html += '<div class="stat-bar"><span class="label">Difficult\u00e9</span><div class="bar-bg"><div class="bar-fill difficulty" style="width:' + (champ.info.difficulty * 10) + '%"></div></div><span style="font-size:13px;color:#666;display:flex;align-items:center;gap:4px">' + getDifficultyIcon(champ.info.difficulty) + champ.info.difficulty + '/10</span></div>';
+            html += '</div>';
+
+            html += '<div class="section-title">Lane</div>';
+            html += '<div style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px;">';
+            
+            var lanes = [];
+            if (champ.id && CHAMPION_LANES && CHAMPION_LANES[champ.id]) {
+                lanes = CHAMPION_LANES[champ.id];
+            } else {
+                lanes = champ.tags || [];
+            }
+            
+            for (var l = 0; l < lanes.length; l++) {
+                var lane = lanes[l];
+                var laneClass = '';
+                
+                if (lane === 'Top') {
+                    laneClass = 'lane-top';
+                } else if (lane === 'Jungle') {
+                    laneClass = 'lane-jungle';
+                } else if (lane === 'Mid') {
+                    laneClass = 'lane-mid';
+                } else if (lane === 'Bot') {
+                    laneClass = 'lane-bot';
+                } else if (lane === 'Support') {
+                    laneClass = 'lane-support';
+                } else {
+                    laneClass = 'lane-other';
+                }
+                
+                html += '<div class="lane-badge ' + laneClass + '">' + lane + '</div>';
+            }
             html += '</div>';
 
             html += '<div class="section-title">Histoire</div>';
