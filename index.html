@@ -102,173 +102,15 @@
 
         <section id="content-valorant" class="tab-content">
             <h2 style="text-align: center; text-transform: uppercase;">Valorant</h2>
-            <input type="text" id="searchBarValo" class="searchBar" placeholder="Rechercher un agent..." oninput="filterCards('content-valorant', this)">
-            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; margin-top: 20px;">
-                <div style="display: flex; gap: 10px; justify-content: center;">
-                    <div style="text-align: center; cursor: pointer;" onclick="showAgent('sage')">
-                        <img src="images/valo/sage.jpeg" alt="Sage" style="width: 100%; max-width: 180px; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
-                        <p style="margin-top: 10px; font-weight: bold; color: #333;">Sage</p>
-                    </div>
-                    <div style="text-align: center; cursor: pointer;" onclick="showAgent('iso')">
-                        <img src="images/valo/iso.jpeg" alt="Iso" style="width: 100%; max-width: 180px; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
-                        <p style="margin-top: 10px; font-weight: bold; color: #333;">Iso</p>
-                    </div>
-                </div>
-
-                <div style="display: flex; gap: 10px; justify-content: center;">
-                    <div style="text-align: center; cursor: pointer;" onclick="showAgent('neon')">
-                        <img src="images/valo/neon.jpeg" alt="Neon" style="width: 100%; max-width: 180px; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
-                        <p style="margin-top: 10px; font-weight: bold; color: #333;">Neon</p>
-                    </div>
-                    <div style="text-align: center; cursor: pointer;" onclick="showAgent('gekko')">
-                        <img src="images/valo/gekko.jpeg" alt="Gekko" style="width: 100%; max-width: 180px; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
-                        <p style="margin-top: 10px; font-weight: bold; color: #333;">Gekko</p>
-                    </div>
-                </div>
-
-                <div style="display: flex; gap: 10px; justify-content: center;">
-                    <div style="text-align: center; cursor: pointer;" onclick="showAgent('skye')">
-                        <img src="images/valo/skye.jpg" alt="Skye" style="width: 100%; max-width: 180px; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
-                        <p style="margin-top: 10px; font-weight: bold; color: #333;">Skye</p>
-                    </div>
-                    <div style="text-align: center; cursor: pointer;" onclick="showAgent('yoru')">
-                        <img src="images/valo/yoru.jpeg" alt="Yoru" style="width: 100%; max-width: 180px; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
-                        <p style="margin-top: 10px; font-weight: bold; color: #333;">Yoru</p>
-                    </div>
-                </div>
-
-                <div style="display: flex; gap: 10px; justify-content: center;">
-                    <div style="text-align: center; cursor: pointer;" onclick="showAgent('jett')">
-                        <img src="images/valo/jett.jpeg" alt="Jett" style="width: 100%; max-width: 180px; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
-                        <p style="margin-top: 10px; font-weight: bold; color: #333;">Jett</p>
-                    </div>
-                    <div style="text-align: center; cursor: pointer;" onclick="showAgent('phoenix')">
-                        <img src="images/valo/phoenix.jpeg" alt="Phoenix" style="width: 100%; max-width: 180px; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
-                        <p style="margin-top: 10px; font-weight: bold; color: #333;">Phoenix</p>
-                    </div>
-                </div>
-
-                <div style="display: flex; gap: 10px; justify-content: center;">
-                    <div style="text-align: center; cursor: pointer;" onclick="showAgent('viper')">
-                        <img src="images/valo/viper.jpg" alt="Viper" style="width: 100%; max-width: 180px; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
-                        <p style="margin-top: 10px; font-weight: bold; color: #333;">Viper</p>
-                    </div>
-                    <div style="text-align: center; cursor: pointer;" onclick="showAgent('chamber')">
-                        <img src="images/valo/chamber.jpeg" alt="Chamber" style="width: 100%; max-width: 180px; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
-                        <p style="margin-top: 10px; font-weight: bold; color: #333;">Chamber</p>
-                    </div>
-                </div>
-
-                <div style="display: flex; gap: 10px; justify-content: center;">
-                    <div style="text-align: center; cursor: pointer;" onclick="showAgent('reyna')">
-                        <img src="images/valo/reyna.jpeg" alt="Reyna" style="width: 100%; max-width: 180px; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
-                        <p style="margin-top: 10px; font-weight: bold; color: #333;">Reyna</p>
-                    </div>
-                    <div style="text-align: center; cursor: pointer;" onclick="showAgent('tejo')">
-                        <img src="images/valo/tejo.jpeg" alt="Tejo" style="width: 100%; max-width: 180px; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
-                        <p style="margin-top: 10px; font-weight: bold; color: #333;">Tejo</p>
-                    </div>
-                </div>
-
-                <div style="display: flex; gap: 10px; justify-content: center;">
-                    <div style="text-align: center; cursor: pointer;" onclick="showAgent('fade')">
-                        <img src="images/valo/fade.jpeg" alt="Fade" style="width: 100%; max-width: 180px; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
-                        <p style="margin-top: 10px; font-weight: bold; color: #333;">Fade</p>
-                    </div>
-                    <div style="text-align: center; cursor: pointer;" onclick="showAgent('sova')">
-                        <img src="images/valo/sova.jpeg" alt="Sova" style="width: 100%; max-width: 180px; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
-                        <p style="margin-top: 10px; font-weight: bold; color: #333;">Sova</p>
-                    </div>
-                </div>
-
-                <div style="display: flex; gap: 10px; justify-content: center;">
-                    <div style="text-align: center; cursor: pointer;" onclick="showAgent('astra')">
-                        <img src="images/valo/astra.jpeg" alt="Astra" style="width: 100%; max-width: 180px; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
-                        <p style="margin-top: 10px; font-weight: bold; color: #333;">Astra</p>
-                    </div>
-                    <div style="text-align: center; cursor: pointer;" onclick="showAgent('harbor')">
-                        <img src="images/valo/harbor.jpeg" alt="Harbor" style="width: 100%; max-width: 180px; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
-                        <p style="margin-top: 10px; font-weight: bold; color: #333;">Harbor</p>
-                    </div>
-                </div>
-
-                <div style="display: flex; gap: 10px; justify-content: center;">
-                    <div style="text-align: center; cursor: pointer;" onclick="showAgent('deadlock')">
-                        <img src="images/valo/deadlock.jpeg" alt="Deadlock" style="width: 100%; max-width: 180px; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
-                        <p style="margin-top: 10px; font-weight: bold; color: #333;">Deadlock</p>
-                    </div>
-                    <div style="text-align: center; cursor: pointer;" onclick="showAgent('breach')">
-                        <img src="images/valo/breach.jpeg" alt="Breach" style="width: 100%; max-width: 180px; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
-                        <p style="margin-top: 10px; font-weight: bold; color: #333;">Breach</p>
-                    </div>
-                </div>
-
-                <div style="display: flex; gap: 10px; justify-content: center;">
-                    <div style="text-align: center; cursor: pointer;" onclick="showAgent('vyse')">
-                        <img src="images/valo/vyse.jpeg" alt="Vyse" style="width: 100%; max-width: 180px; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
-                        <p style="margin-top: 10px; font-weight: bold; color: #333;">Vyse</p>
-                    </div>
-                    <div style="text-align: center; cursor: pointer;" onclick="showAgent('cypher')">
-                        <img src="images/valo/cypher.jpeg" alt="Cypher" style="width: 100%; max-width: 180px; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
-                        <p style="margin-top: 10px; font-weight: bold; color: #333;">Cypher</p>
-                    </div>
-                </div>
-
-                <div style="display: flex; gap: 10px; justify-content: center;">
-                    <div style="text-align: center; cursor: pointer;" onclick="showAgent('clove')">
-                        <img src="images/valo/clove.jpeg" alt="Clove" style="width: 100%; max-width: 180px; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
-                        <p style="margin-top: 10px; font-weight: bold; color: #333;">Clove</p>
-                    </div>
-                    <div style="text-align: center; cursor: pointer;" onclick="showAgent('miks')">
-                        <img src="images/valo/miks.jpeg" alt="Miks" style="width: 100%; max-width: 180px; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
-                        <p style="margin-top: 10px; font-weight: bold; color: #333;">Miks</p>
-                    </div>
-                </div>
-
-                <div style="display: flex; gap: 10px; justify-content: center;">
-                    <div style="text-align: center; cursor: pointer;" onclick="showAgent('waylay')">
-                        <img src="images/valo/waylay.jpeg" alt="Waylay" style="width: 100%; max-width: 180px; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
-                        <p style="margin-top: 10px; font-weight: bold; color: #333;">Waylay</p>
-                    </div>
-                    <div style="text-align: center; cursor: pointer;" onclick="showAgent('veto')">
-                        <img src="images/valo/veto.jpeg" alt="Veto" style="width: 100%; max-width: 180px; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
-                        <p style="margin-top: 10px; font-weight: bold; color: #333;">Veto</p>
-                    </div>
-                </div>
-
-                <div style="display: flex; gap: 10px; justify-content: center;">
-                    <div style="text-align: center; cursor: pointer;" onclick="showAgent('killjoy')">
-                        <img src="images/valo/killjoy.jpeg" alt="Killjoy" style="width: 100%; max-width: 180px; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
-                        <p style="margin-top: 10px; font-weight: bold; color: #333;">Killjoy</p>
-                    </div>
-                    <div style="text-align: center; cursor: pointer;" onclick="showAgent('raze')">
-                        <img src="images/valo/raze.jpeg" alt="Raze" style="width: 100%; max-width: 180px; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
-                        <p style="margin-top: 10px; font-weight: bold; color: #333;">Raze</p>
-                    </div>
-                </div>
-
-                <div style="display: flex; gap: 10px; justify-content: center;">
-                    <div style="text-align: center; cursor: pointer;" onclick="showAgent('kayo')">
-                        <img src="images/valo/kayo.jpeg" alt="KAYO" style="width: 100%; max-width: 180px; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
-                        <p style="margin-top: 10px; font-weight: bold; color: #333;">KAYO</p>
-                    </div>
-                    <div style="text-align: center; cursor: pointer;" onclick="showAgent('brimstone')">
-                        <img src="images/valo/brimstone.jpeg" alt="Brimstone" style="width: 100%; max-width: 180px; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
-                        <p style="margin-top: 10px; font-weight: bold; color: #333;">Brimstone</p>
-                    </div>
-                </div>
-
-                <div style="display: flex; gap: 10px; justify-content: center;">
-                    <div style="text-align: center; cursor: pointer;" onclick="showAgent('omen')">
-                        <img src="images/valo/omen.jpeg" alt="Omen" style="width: 100%; max-width: 180px; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
-                        <p style="margin-top: 10px; font-weight: bold; color: #333;">Omen</p>
-                    </div>
-                    <div style="text-align: center; cursor: pointer;" onclick="showAgent('8')">
-                        <img src="images/valo/8.png" alt="8" style="width: 100%; max-width: 180px; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
-                        <p style="margin-top: 10px; font-weight: bold; color: #333;">Agent 8</p>
-                    </div>
-                </div>  
+            <div style="display: flex; gap: 10px; align-items: center; justify-content: center; margin-bottom: 15px;">
+                <input type="text" id="searchBarValo" class="searchBar" placeholder="Rechercher un agent..." oninput="filterValo()" style="margin:0; max-width:300px;">
+                <select id="sortValo" onchange="renderValo()" style="padding:8px 12px; border:2px solid rgba(228,0,43,0.5); border-radius:25px; font-size:14px; outline:none; background:rgba(255,255,255,0.9); cursor:pointer;">
+                    <option value="duo">Duo</option>
+                    <option value="alpha">Alphabétique</option>
+                    <option value="release">Ordre d'arrivée</option>
+                </select>
             </div>
+            <div id="valoGrid"></div>
         </section>
 
         <section id="content-lol" class="tab-content">
@@ -1037,23 +879,134 @@
 
     <section>
         <h2>Clique sur le bouton ci-dessous</h2>
-        <button onclick="showChampion(this)">Clique-moi</button>
+        <button onclick="afficherMessage()">Clique-moi</button>
         <p id="message" style="font-weight: bold; color: red;"></p>
     </section>
 
     <script>
-          function showAgent(id) {
+        var VALO_AGENTS = [
+            {id:"sage", nom:"Sage", ext:"jpeg"},
+            {id:"iso", nom:"Iso", ext:"jpeg"},
+            {id:"neon", nom:"Neon", ext:"jpeg"},
+            {id:"gekko", nom:"Gekko", ext:"jpeg"},
+            {id:"skye", nom:"Skye", ext:"jpg"},
+            {id:"yoru", nom:"Yoru", ext:"jpeg"},
+            {id:"jett", nom:"Jett", ext:"jpeg"},
+            {id:"phoenix", nom:"Phoenix", ext:"jpeg"},
+            {id:"viper", nom:"Viper", ext:"jpg"},
+            {id:"chamber", nom:"Chamber", ext:"jpeg"},
+            {id:"reyna", nom:"Reyna", ext:"jpeg"},
+            {id:"tejo", nom:"Tejo", ext:"jpeg"},
+            {id:"fade", nom:"Fade", ext:"jpeg"},
+            {id:"sova", nom:"Sova", ext:"jpeg"},
+            {id:"astra", nom:"Astra", ext:"jpeg"},
+            {id:"harbor", nom:"Harbor", ext:"jpeg"},
+            {id:"deadlock", nom:"Deadlock", ext:"jpeg"},
+            {id:"breach", nom:"Breach", ext:"jpeg"},
+            {id:"vyse", nom:"Vyse", ext:"jpeg"},
+            {id:"cypher", nom:"Cypher", ext:"jpeg"},
+            {id:"clove", nom:"Clove", ext:"jpeg"},
+            {id:"miks", nom:"Miks", ext:"jpeg"},
+            {id:"waylay", nom:"Waylay", ext:"jpeg"},
+            {id:"veto", nom:"Veto", ext:"jpeg"},
+            {id:"killjoy", nom:"Killjoy", ext:"jpeg"},
+            {id:"raze", nom:"Raze", ext:"jpeg"},
+            {id:"kayo", nom:"KAYO", ext:"jpeg"},
+            {id:"brimstone", nom:"Brimstone", ext:"jpeg"},
+            {id:"omen", nom:"Omen", ext:"jpeg"},
+            {id:"8", nom:"Agent 8", ext:"png"}
+        ];
+
+        var DUO_ORDER = [
+            ["sage","iso"], ["neon","gekko"], ["skye","yoru"], ["jett","phoenix"],
+            ["viper","chamber"], ["reyna","tejo"], ["fade","sova"], ["astra","harbor"],
+            ["deadlock","breach"], ["vyse","cypher"], ["clove","miks"], ["waylay","veto"],
+            ["killjoy","raze"], ["kayo","brimstone"], ["omen","8"]
+        ];
+
+        var RELEASE_ORDER = [
+            "brimstone","viper","omen","killjoy","cypher","sova","sage","8",
+            "phoenix","jett","reyna","raze","breach","skye","yoru","astra",
+            "kayo","chamber","neon","fade","harbor","gekko","deadlock","iso",
+            "clove","vyse","tejo","waylay","veto","miks"
+        ];
+
+        function getAgent(id) {
+            for (var i = 0; i < VALO_AGENTS.length; i++) {
+                if (VALO_AGENTS[i].id === id) return VALO_AGENTS[i];
+            }
+            return null;
+        }
+
+        function makeCard(agent) {
+            return '<div style="text-align:center;cursor:pointer;" onclick="showAgent(\'' + agent.id + '\')">' +
+                '<img src="images/valo/' + agent.id + '.' + agent.ext + '" alt="' + agent.nom + '" style="width:100%;max-width:180px;height:auto;border-radius:8px;box-shadow:0 4px 8px rgba(0,0,0,0.2);">' +
+                '<p style="margin-top:10px;font-weight:bold;color:#333;">' + agent.nom + '</p></div>';
+        }
+
+        function renderValo() {
+            var sort = document.getElementById("sortValo").value;
+            var grid = document.getElementById("valoGrid");
+            var html = "";
+
+            if (sort === "duo") {
+                html = '<div style="display:grid;grid-template-columns:repeat(2,1fr);gap:30px;">';
+                for (var i = 0; i < DUO_ORDER.length; i++) {
+                    html += '<div style="display:flex;gap:10px;justify-content:center;">';
+                    for (var j = 0; j < DUO_ORDER[i].length; j++) {
+                        var a = getAgent(DUO_ORDER[i][j]);
+                        if (a) html += makeCard(a);
+                    }
+                    html += '</div>';
+                }
+                html += '</div>';
+            } else {
+                var list = [];
+                if (sort === "alpha") {
+                    list = VALO_AGENTS.slice().sort(function(a,b){
+                        return a.nom.localeCompare(b.nom);
+                    });
+                } else {
+                    for (var r = 0; r < RELEASE_ORDER.length; r++) {
+                        var a2 = getAgent(RELEASE_ORDER[r]);
+                        if (a2) list.push(a2);
+                    }
+                }
+                html = '<div style="display:flex;gap:20px;justify-content:center;flex-wrap:wrap;">';
+                for (var k = 0; k < list.length; k++) {
+                    html += makeCard(list[k]);
+                }
+                html += '</div>';
+            }
+
+            grid.innerHTML = html;
+            filterValo();
+        }
+
+        function filterValo() {
+            var input = document.getElementById("searchBarValo");
+            var searchText = input.value.toLowerCase().trim();
+            var grid = document.getElementById("valoGrid");
+            if (!grid) return;
+            var cards = grid.querySelectorAll("div[style*='text-align:center'][style*='cursor:pointer']");
+            cards.forEach(function(card) {
+                var name = card.querySelector("p");
+                if (name) {
+                    if (searchText === "" || name.textContent.toLowerCase().includes(searchText)) {
+                        card.style.display = "";
+                    } else {
+                        card.style.display = "none";
+                    }
+                }
+            });
+        }
+
+        function showAgent(id) {
             location.href = "agent.html?id=" + id;
         }
 
-        function showChampion(el) {
-            var name = el.querySelector("p");
-            if (name && name.textContent) {
-                location.href = "champion.html?name=" + encodeURIComponent(name.textContent);
-            }
-        }
-
         (function() {
+            renderValo();
             var params = new URLSearchParams(window.location.search);
             var tab = params.get("tab");
             if (tab) switchTab(tab);
@@ -1070,10 +1023,9 @@
             document.getElementById("tab-" + tab).classList.add("active");
             document.body.className = "bg-" + tab;
             document.querySelectorAll(".searchBar").forEach(sb => sb.value = "");
-            document.querySelectorAll(".searchBar").forEach(sb => {
-                const section = sb.closest(".tab-content");
-                if (section) filterCards(section.id, sb);
-            });
+            filterValo();
+            var lolBar = document.getElementById("searchBarLol");
+            if (lolBar) filterCards("content-lol", lolBar);
         }
 
         function filterCards(sectionId, input) {
