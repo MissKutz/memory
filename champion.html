@@ -138,7 +138,7 @@
             box-shadow: 0 1px 3px rgba(0,0,0,0.1);
             border: 1px solid rgba(255,255,255,0.2);
         }
-        .lane-top { background-color: #FF8C00; }
+        .lane-top { background-color: #eea144; }
         .lane-jungle { background-color: #1B5E20; }
         .lane-mid { background-color: #FFC107; color: #333; }
         .lane-bot { background-color: #C77DFF; }
@@ -589,11 +589,53 @@ var CHAMPIONS_DATA = [
             return '<img src="images/roles/' + icon + '" alt="Difficult\u00e9 ' + diff + '" style="width:32px;height:22px;vertical-align:middle">';
         }
 
+        var CHAMPION_LANES = {
+"aatrox":["Top","Jungle"],"ahri":["Mid"],"akali":["Top","Mid"],"akshan":["Mid"],"alistar":["Support"],"ambessa":["Top","Jungle"],"amumu":["Jungle","Support"],"anivia":["Top","Mid","Support"],"annie":["Mid"],"aphelios":["Bot"],"ashe":["Bot"],"aurelionsol":["Mid"],"aurora":["Top","Mid"],"azir":["Mid"],"bard":["Support"],"belveth":["Jungle"],"blitzcrank":["Support"],"brand":["Mid","Bot","Support"],"braum":["Support"],"briar":["Jungle"],"caitlyn":["Bot"],"camille":["Top","Support"],"cassiopeia":["Top","Mid"],"chogath":["Top","Mid"],"corki":["Bot"],"darius":["Top","Jungle"],"diana":["Jungle","Mid"],"drmundo":["Top"],"draven":["Bot"],"ekko":["Jungle","Mid"],"elise":["Jungle","Support"],"evelynn":["Jungle"],"ezreal":["Bot"],"fiddlesticks":["Jungle","Support"],"fiora":["Top"],"fizz":["Jungle","Mid"],"galio":["Mid","Support"],"gangplank":["Top"],"garen":["Top"],"gnar":["Top"],"gragas":["Top","Jungle"],"graves":["Jungle"],"gwen":["Top","Jungle"],"hecarim":["Jungle"],"heimerdinger":["Top"],"hwei":["Mid","Bot","Support"],"illaoi":["Top"],"irelia":["Top","Mid"],"ivern":["Jungle"],"janna":["Support"],"jarvaniv":["Jungle"],"jax":["Top","Jungle"],"jayce":["Top","Jungle","Mid"],"jhin":["Bot"],"jinx":["Bot"],"ksante":["Top"],"kaisa":["Bot"],"kalista":["Bot"],"karma":["Support"],"karthus":["Jungle","Bot"],"kassadin":["Mid"],"katarina":["Mid","Bot"],"kayle":["Top"],"kayn":["Jungle"],"kennen":["Top"],"khazix":["Jungle"],"kindred":["Jungle"],"kled":["Top"],"kogmaw":["Bot"],"leblanc":["Mid","Support"],"leesin":["Jungle"],"leona":["Support"],"lillia":["Jungle"],"lissandra":["Top","Mid"],"locke":["Top","Jungle","Mid"],"lucian":["Bot"],"lulu":["Support"],"lux":["Mid","Bot","Support"],"masteryi":["Top","Jungle"],"malphite":["Top","Jungle","Mid"],"malzahar":["Top","Mid"],"maokai":["Top","Support"],"mel":["Mid","Bot","Support"],"milio":["Support"],"missfortune":["Bot"],"mordekaiser":["Top"],"morgana":["Support"],"naafiri":["Jungle","Mid"],"nami":["Support"],"nasus":["Top","Jungle"],"nautilus":["Support"],"neeko":["Support"],"nidalee":["Jungle"],"nilah":["Bot"],"nocturne":["Jungle"],"nunu":["Jungle","Mid"],"olaf":["Top","Jungle"],"orianna":["Mid"],"ornn":["Top"],"pantheon":["Top","Jungle","Mid","Support"],"poppy":["Top","Jungle","Support"],"pyke":["Support"],"qiyana":["Jungle","Mid"],"quinn":["Top","Jungle"],"rakan":["Support"],"rammus":["Jungle"],"reksai":["Jungle"],"rell":["Support"],"renataglasc":["Support"],"renekton":["Top"],"rengar":["Jungle"],"riven":["Top","Mid"],"rumble":["Top"],"ryze":["Top","Mid"],"samira":["Bot"],"sejuani":["Jungle"],"senna":["Bot","Support"],"seraphine":["Bot","Support"],"sett":["Top"],"shaco":["Jungle","Support"],"shen":["Top","Support"],"shyvana":["Jungle"],"singed":["Top"],"sion":["Top","Mid"],"sivir":["Bot"],"skarner":["Jungle","Support"],"smolder":["Mid","Bot"],"sona":["Support"],"soraka":["Support"],"swain":["Mid","Bot","Support"],"sylas":["Jungle","Mid"],"syndra":["Mid","Bot"],"tahmkench":["Top","Support"],"taliyah":["Jungle","Mid"],"talon":["Jungle","Mid"],"taric":["Support"],"teemo":["Top","Bot"],"thresh":["Support"],"tristana":["Mid","Bot"],"trundle":["Top","Jungle"],"tryndamere":["Top"],"twistedfate":["Mid"],"twitch":["Bot"],"udyr":["Top","Jungle"],"urgot":["Top"],"varus":["Top","Bot"],"vayne":["Top","Bot"],"veigar":["Mid","Bot"],"velkoz":["Mid","Bot","Support"],"vex":["Mid"],"vi":["Jungle"],"viego":["Jungle"],"viktor":["Mid"],"vladimir":["Top","Mid","Bot"],"volibear":["Top","Jungle"],"warwick":["Top","Jungle"],"wukong":["Top","Jungle"],"xayah":["Bot"],"xerath":["Mid","Bot","Support"],"xinzhao":["Top","Jungle"],"yasuo":["Top","Mid","Bot"],"yone":["Top","Mid"],"yorick":["Top"],"yunara":["Bot"],"yuumi":["Support"],"zaahen":["Top","Jungle"],"zac":["Jungle"],"zed":["Jungle","Mid"],"zeri":["Bot"],"ziggs":["Mid","Bot"],"zilean":["Support"],"zoe":["Mid","Support"],"zyra":["Jungle","Support"]
+        };
+
+        function getLanes(champ) {
+            var lanes = [];
+            var key = champ.id ? champ.id.toLowerCase() : '';
+            if (key && typeof CHAMPION_LANES !== 'undefined' && CHAMPION_LANES[key]) {
+                lanes = CHAMPION_LANES[key];
+            } else {
+                lanes = champ.tags || [];
+            }
+            return lanes;
+        }
+
+        function getLaneHTML(lanes) {
+            var iconMap = {
+                "Top": "laneTop.svg",
+                "Jungle": "laneJungle.svg",
+                "Mid": "laneMid.svg",
+                "Bot": "laneBot.svg",
+                "Support": "laneSupport.svg"
+            };
+            var classMap = {
+                "Top": "lane-top",
+                "Jungle": "lane-jungle",
+                "Mid": "lane-mid",
+                "Bot": "lane-bot",
+                "Support": "lane-support"
+            };
+            var html = '';
+            for (var l = 0; l < lanes.length; l++) {
+                var lane = lanes[l];
+                var laneClass = classMap[lane] || 'lane-other';
+                var iconFile = iconMap[lane] || '';
+                html += '<div class="lane-badge ' + laneClass + '">' + (iconFile ? '<img src="images/lanes/' + iconFile + '" alt="' + lane + '" style="width:16px;height:16px;vertical-align:middle;margin-right:3px">' : '') + lane + '</div>';
+            }
+            return html;
+        }
+
         function afficherChampion(champ) {
             document.title = champ.nom + " - League of Legends Memory";
 
             var html = '';
             html += '<a class="back" href="index.html?tab=lol">&larr; Retour aux champions</a>';
+
+            var lanes = getLanes(champ);
 
             html += '<div class="header">';
             html += '<img src="images/lol/' + champ.id + '.png" alt="' + champ.nom + '">';
@@ -603,10 +645,13 @@ var CHAMPIONS_DATA = [
             html += '</div>';
             html += '<div class="title">' + champ.titre + '</div>';
             if (champ.tags && champ.tags.length > 0) {
-                html += '<div class="role-under-name">';
+                html += '<div class="role-under-name" style="display:flex;align-items:center;flex-wrap:wrap;gap:6px">';
                 for (var t = 0; t < champ.tags.length; t++) {
                     html += getRoleIcon(champ.tags[t]);
                 }
+                html += '<span style="color:#888;font-size:13px">|</span>';
+                html += getLaneHTML(lanes);
+                html += '<span style="color:#888;font-size:13px">|</span>';
                 html += getDifficultyIcon(champ.info.difficulty);
                 html += '</div>';
             }
@@ -622,38 +667,6 @@ var CHAMPIONS_DATA = [
             html += '<div class="stat-bar"><span class="label">D\u00e9fense</span><div class="bar-bg"><div class="bar-fill defense" style="width:' + (champ.info.defense * 10) + '%"></div></div><span style="font-size:13px;color:#666">' + champ.info.defense + '/10</span></div>';
             html += '<div class="stat-bar"><span class="label">Magie</span><div class="bar-bg"><div class="bar-fill magic" style="width:' + (champ.info.magic * 10) + '%"></div></div><span style="font-size:13px;color:#666">' + champ.info.magic + '/10</span></div>';
             html += '<div class="stat-bar"><span class="label">Difficult\u00e9</span><div class="bar-bg"><div class="bar-fill difficulty" style="width:' + (champ.info.difficulty * 10) + '%"></div></div><span style="font-size:13px;color:#666;display:flex;align-items:center;gap:4px">' + getDifficultyIcon(champ.info.difficulty) + champ.info.difficulty + '/10</span></div>';
-            html += '</div>';
-
-            html += '<div class="section-title">Lane</div>';
-            html += '<div style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px;">';
-            
-            var lanes = [];
-            if (champ.id && CHAMPION_LANES && CHAMPION_LANES[champ.id]) {
-                lanes = CHAMPION_LANES[champ.id];
-            } else {
-                lanes = champ.tags || [];
-            }
-            
-            for (var l = 0; l < lanes.length; l++) {
-                var lane = lanes[l];
-                var laneClass = '';
-                
-                if (lane === 'Top') {
-                    laneClass = 'lane-top';
-                } else if (lane === 'Jungle') {
-                    laneClass = 'lane-jungle';
-                } else if (lane === 'Mid') {
-                    laneClass = 'lane-mid';
-                } else if (lane === 'Bot') {
-                    laneClass = 'lane-bot';
-                } else if (lane === 'Support') {
-                    laneClass = 'lane-support';
-                } else {
-                    laneClass = 'lane-other';
-                }
-                
-                html += '<div class="lane-badge ' + laneClass + '">' + lane + '</div>';
-            }
             html += '</div>';
 
             html += '<div class="section-title">Histoire</div>';
